@@ -4,7 +4,7 @@ var settings = {
     duration: 4, // particle duration in sec
     velocity: 80, // particle velocity in pixels/sec
     effect: -1.3, // play with this for a nice effect
-    size: 4, // particle size in pixels
+    size: 7, // particle size in pixels
   },
 };
 /*
@@ -208,7 +208,7 @@ var ParticlePool = (function () {
     }
     context.closePath();
     // create the fill
-    context.fillStyle = "#FFFF00";
+    context.fillStyle = "#B22222";
     context.fill();
     // create the image
     var image = new Image();

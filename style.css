@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,500;0,700;1,100;1,200;1,300;1,600;1,700&display=swap');
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.851);
+}
+
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.box {
+    width: 70%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.toi {
+    color: #FFFF00;
+    font-size: 85px;
+}
+
+#pinkboard {
+    position: relative;
+    margin: auto;
+    height: 420px;
+    width: 420px;
+    animation: animate 1.2s infinite;
+}
+
+#pinkboard:before,
+#pinkboard:after {
+    content: '';
+    position: absolute;
+    background: #d63031;
+    width: 100px;
+    height: 160px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+#pinkboard:before {
+    left: 100px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#pinkboard:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(.6);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-orange2 {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(.6);
+        color: blue;
+    }
+
+    60% {
+        transform: scale(1.2);
+        color: red;
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+h1 {
+    animation: pulse-orange2 1.5s infinite;
+}
+
+@media(max-width: 500px) {
+    .box {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #pinkboard {
+
+        height: 600px;
+        z-index: 100;
+    }
+
+}
